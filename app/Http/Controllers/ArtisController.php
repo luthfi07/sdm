@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Artis;
+use App\Kecamatan;
+use App\Kabupaten;
+use App\Provinsi;
+
 class ArtisController extends Controller
 {
     /**
@@ -26,8 +30,13 @@ class ArtisController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('artis.create');
+    {   
+        $provinsi = Provinsi::all();
+        $kabupaten = Kabupaten::all();
+        $kecamatan = Kecamatan::all();
+
+
+        return view('artis.create',['kecamatan'=>$kecamatan,'kabupaten'=>$kabupaten,'provinsi'=>$provinsi]);
     }
 
     /**
@@ -44,7 +53,7 @@ class ArtisController extends Controller
         $artis->tanggal_lahir = $request->tanggal_lahir;
         $artis->foto = $request->foto;
         $artis->alamat_tinggal = $request->alamat_tinggal;
-
+        $artis->id_kecamatan = $request->kecamatan;
         $artis->save();
 
         return redirect('/artis')->with('status','Data Berhasil Ditambah');

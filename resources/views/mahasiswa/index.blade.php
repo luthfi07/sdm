@@ -30,14 +30,14 @@
                             <td scope="row">{{$sum->tempat_lahir}}</td>
                             <td scope="row">{{$sum->foto}}</td>
                             <td scope="row">{{$sum->tanggal_lahir}}</td>
-                            <td scope="row">{{$sum->alamat_tingal}}</td>
-                            <td scope="row">{{$sum->id_kecamamatan}}</td>
+                            <td scope="row">{{$sum->alamat_tinggal}}</td>
+                            <td scope="row">{{$sum->id_kecamatan}}</td>
                             <td scope="row">kabupaten</td>
                             <td scope="row">provinsi</td>
                             
                             <td scope="row">
                                 <a href="/artis/create" class="badge badge-success">add</a>
-                                <a href="" class="badge badge-danger">delete</a>
+                                <a href=""   class="badge badge-danger">delete</a>
                             </td>
                         </tr>
                     @endforeach
