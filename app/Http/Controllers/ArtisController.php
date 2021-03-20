@@ -58,7 +58,7 @@ class ArtisController extends Controller
      */
     public function show($id)
     {
-        //
+        // ada
     }
 
     /**
